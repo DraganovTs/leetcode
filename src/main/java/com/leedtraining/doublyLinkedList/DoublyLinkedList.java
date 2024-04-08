@@ -25,6 +25,18 @@ public class DoublyLinkedList {
         length = 1;
     }
 
+    public Node getHead() {
+        return head;
+    }
+
+    public Node getTail() {
+        return tail;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
     public void printList() {
         Node temp = head;
         while (temp != null) {
@@ -33,24 +45,27 @@ public class DoublyLinkedList {
         }
     }
 
-    public void getHead() {
-        if (head == null) {
+    public void printAll() {
+        if (length == 0) {
             System.out.println("Head: null");
-        } else {
-            System.out.println("Head: " + head.value);
-        }
-    }
-
-    public void getTail() {
-        if (head == null) {
             System.out.println("Tail: null");
         } else {
+            System.out.println("Head: " + head.value);
             System.out.println("Tail: " + tail.value);
+        }
+        System.out.println("Length:" + length);
+        System.out.println("\nDoubly Linked List:");
+        if (length == 0) {
+            System.out.println("empty");
+        } else {
+            printList();
         }
     }
 
-    public void getLength() {
-        System.out.println("Length: " + length);
+    public void makeEmpty() {
+        head = null;
+        tail = null;
+        length = 0;
     }
 
     public void append(int value) {
@@ -156,9 +171,9 @@ public class DoublyLinkedList {
     }
 
     public Node remove(int index) {
-        if(index < 0 || index >= length) return null;
-        if(index == 0) return removeFirst();
-        if(index == length - 1) return removeLast();
+        if (index < 0 || index >= length) return null;
+        if (index == 0) return removeFirst();
+        if (index == length - 1) return removeLast();
 
         Node temp = get(index);
 
@@ -169,6 +184,13 @@ public class DoublyLinkedList {
 
         length--;
         return temp;
+    }
+
+    public void swapFirstLast() {
+        if (length < 2) return;
+        int temp = head.value;
+        head.value = tail.value;
+        tail.value = temp;
     }
 
 
