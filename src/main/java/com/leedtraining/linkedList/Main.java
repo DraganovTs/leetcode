@@ -1,30 +1,36 @@
 package com.leedtraining.linkedList;
 
 
+import com.leedtraining.doublyLinkedList.DoublyLinkedList;
+
 public class Main {
 
     public static void main(String[] args) {
 
 
 
+        DoublyLinkedList myDLL = new DoublyLinkedList(1);
+        myDLL.append(2);
 
-            LinkedList myLinkedList = new LinkedList(1);
-            myLinkedList.append(2);
-            myLinkedList.append(3);
-            myLinkedList.append(4);
-            myLinkedList.append(5);
+        myDLL.getHead();
+        myDLL.getTail();
+        myDLL.getLength();
 
-            int k = 2;
-            int result = myLinkedList.findKthFromEnd(k).value;
-
-            System.out.println(result); // Output: 4
+        System.out.println("\nDoubly Linked List:");
+        myDLL.printList();
 
         /*
-            EXPECTED OUTPUT:
-            ----------------
-            4
+       		EXPECTED OUTPUT:
+        	----------------
+        	Head: 1
+        	Tail: 2
+        	Length: 2
 
-        */
+        	Doubly Linked List:
+        	1
+        	2
+
+     	*/
 
     }
 }
