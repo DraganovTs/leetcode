@@ -14,11 +14,11 @@ public class Main {
         myBST.insert(82);
 
 
-        System.out.println("BST Contains 27:");
-        System.out.println(myBST.contains(27));
+        System.out.println("\nBST Contains 27:");
+        System.out.println(myBST.rContains(27));
 
         System.out.println("\nBST Contains 17:");
-        System.out.println(myBST.contains(17));
+        System.out.println(myBST.rContains(17));
 
 
         /*
